@@ -10,6 +10,7 @@ import { User } from '../models/user';
 export class UserService {
 
   endpoint = `${environment.API_URL}/users`;
+  
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +34,6 @@ export class UserService {
   deleteUser(id: string) {
     return this.http.delete(`${this.endpoint}/${id}`);
   }
+
 
 }

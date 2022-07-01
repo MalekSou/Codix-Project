@@ -29,6 +29,12 @@ export class UsersComponent implements OnInit {
     this.userService.deleteUser(id).toPromise()
     .then(res => this.router.navigate(['/users']))
     .catch(err => console.log)
+    this.ngOnInit();
+  }
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
+
   }
 
 }
